@@ -7,6 +7,16 @@ use Illuminate\Support\Str;
 
 class Pizza extends Model
 {
+
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'isVegetarian',
+        'popularity',
+        'slug'
+    ];
+
     public static function slugGenerator($string)
     {
         $slug = Str::slug($string, '-');

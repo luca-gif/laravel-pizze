@@ -19,6 +19,9 @@
                         <td>{{ $pizza->id }}</td>
                         <td>{{ $pizza->name }}</td>
                         <td>{{ $pizza->price }}</td>
+                        <td>
+                            <a class="btn btn-primary" href="{{ route('admin.pizze.show', $pizza) }}">Show</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
