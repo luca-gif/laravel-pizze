@@ -68,7 +68,9 @@ class PizzaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pizza = Pizza::find($id);
+
+        return view('admin.pizzas.edit', compact('pizza'));
     }
 
     /**
@@ -80,7 +82,12 @@ class PizzaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $pizza = Pizza::find($id);
+
+        $pizza->update($data);
+
+        return redirect()->route('admin.pizze.show', $pizza);
     }
 
     /**
@@ -91,6 +98,9 @@ class PizzaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pizza = Pizza::find($id);
+        $pizza->delete();
+
+        return redirect()->route('admin.pizze.index');
     }
 }

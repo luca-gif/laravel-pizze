@@ -21,6 +21,15 @@
                         <td>{{ $pizza->price }}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('admin.pizze.show', $pizza) }}">Show</a>
+                            <a class="btn btn-success" href="{{ route('admin.pizze.edit', $pizza) }}">Edit</a>
+                            <form class="d-inline"
+                                onsubmit="return confirm('Sei sicuro di voler eliminare {{ $pizza->name }}?')"
+                                action="{{ route('admin.pizze.destroy', $pizza) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

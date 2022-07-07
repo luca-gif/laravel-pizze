@@ -19,5 +19,8 @@
                 </li>
             @endif
         </ul>
+
+        <a class="btn btn-dark" href="{{ route('admin.pizze.index') }}">Back</a>
+
     </div>
 @endsection

@@ -14,6 +14,11 @@
                 <input type="number" class="form-control" id="price" name="price" placeholder="prezzo della pizza">
             </div>
 
+            <div class="form-group">
+                <label for="popularity">Popolarità</label>
+                <input type="number" class="form-control" id="popularity" name="popularity" placeholder="Voto pizza">
+            </div>
+
             <label for="description">Ingredienti</label>
             <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
 
