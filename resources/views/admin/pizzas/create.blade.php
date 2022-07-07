@@ -2,25 +2,51 @@
 
 @section('content')
     <div class="container">
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form action="{{ route('admin.pizze.store') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name">Nome</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="nome pizza">
-
+                <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}"
+                    id="name" name="name" placeholder="nome pizza">
+                @error('name')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="price">Prezzo</label>
-                <input type="number" class="form-control" id="price" name="price" placeholder="prezzo della pizza">
+                <input type="number" class="form-control @error('price') is-invalid @enderror" value="{{ old('price') }}"
+                    id="price" name="price" placeholder="prezzo della pizza">
+                @error('price')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="popularity">Popolarità</label>
-                <input type="number" class="form-control" id="popularity" name="popularity" placeholder="Voto pizza">
+                <input type="text" class="form-control @error('popularity') is-invalid @enderror"
+                    value="{{ old('popularity') }}" id="popularity" name="popularity" placeholder="Voto pizza">
+                @error('popularity')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
             </div>
 
             <label for="description">Ingredienti</label>
-            <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
+            <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description"
+                cols="30" rows="10">{{ old('description') }}</textarea>
+            @error('description')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
 
             <div class="form-group">
                 <p class="mt-2">Vegetariano?</p>
