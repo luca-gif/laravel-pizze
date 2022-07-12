@@ -5,19 +5,21 @@
         <div class="row">
             <div class="card col-6 offset-3 p-4">
                 <ul>
-                    <li>Nome Pizza: {{ $pizza->name }}</li>
-                    <li>Ingredienti: {{ $pizza->description }}</li>
-                    <li>Prezzo: € {{ $pizza->price }}</li>
+                    <li><strong>Nome Pizza</strong>: {{ $pizza->name }}</li>
+                    <li><strong>Ingredienti</strong>:
+                        @foreach($pizza->ingredients as $ingredient){{$ingredient->name}} @endforeach
+                    </li>
+                    <li><strong>Prezzo</strong>: € {{ $pizza->price }}</li>
 
                     @if ($pizza->isVegetarian)
                         <li>
-                            Questa pizza è vegetariana
+                            <strong>Questa pizza è vegetariana</strong>
                         </li>
                     @endif
 
                     @if ($pizza->popularity)
                         <li>
-                            Popolarità: {{ $pizza->popularity }}
+                            <strong>Popolarità</strong>: {{ $pizza->popularity }}
                         </li>
                     @endif
                 </ul>

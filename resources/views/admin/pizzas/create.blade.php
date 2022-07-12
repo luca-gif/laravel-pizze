@@ -56,7 +56,22 @@
                 <input type="radio" name="isVegetarian" value="0" id="notVegetarian">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            @foreach ($ingredients as $ingredient)
+                <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="{{$ingredient->id}}"
+                        id="ingredient{{$loop->iteration}}"
+                        name="ingredients[]"
+                        @if(in_array($ingredient->id, old("ingredients", []))) checked @endif>
+                    <label class="form-check-label mr-3" for="ingredient{{$loop->iteration}}">
+                        {{$ingredient->name}}
+                    </label>
+                </div>
+            @endforeach
+
+            <button type="submit" class="btn btn-primary mt-3">Crea!</button>
         </form>
     </div>
 @endsection
