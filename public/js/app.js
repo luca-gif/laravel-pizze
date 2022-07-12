@@ -1950,7 +1950,7 @@ var staticRenderFns = [function () {
     staticClass: "card-header"
   }, [_vm._v("Example Component")]), _vm._v(" "), _c("div", {
     staticClass: "card-body"
-  }, [_vm._v("\n                        I'm an example component.\n                    ")])])])])]);
+  }, [_vm._v("\r\n                        I'm an example component.\r\n                    ")])])])])]);
 }];
 render._withStripped = true;
 
@@ -49487,8 +49487,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Boolean\Laravel\laravel-pizze\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Boolean\Laravel\laravel-pizze\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\bruno\Desktop\Boolean\LARAVEL\Lezione-12-07\laravel-pizze\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\bruno\Desktop\Boolean\LARAVEL\Lezione-12-07\laravel-pizze\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

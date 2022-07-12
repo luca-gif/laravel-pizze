@@ -17,7 +17,7 @@ class PizzaTableSeeder extends Seeder
         foreach ($pizzas as $pizza) {
             $new_pizza = new Pizza();
             $new_pizza->name = $pizza['nome'];
-            $new_pizza->description = $pizza['ingredienti'];
+            // $new_pizza->description = $pizza['ingredienti'];
             $new_pizza->price = $pizza['prezzo'];
             if ($pizza['vegetariana'] === 'sì') {
                 $new_pizza->isVegetarian = true;

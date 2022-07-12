@@ -17,6 +17,11 @@ class Pizza extends Model
         'slug'
     ];
 
+    public function ingredients()
+    {
+        return $this->belongsToMany("App\Ingredient");
+    }
+
     public static function slugGenerator($string)
     {
         $slug = Str::slug($string, '-');
