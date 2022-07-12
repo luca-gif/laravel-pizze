@@ -41,21 +41,7 @@
                 @enderror
             </div>
 
-            <label for="description">Ingredienti</label>
-            <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description"
-                cols="30" rows="10">{{ old('description') }}</textarea>
-            @error('description')
-                <p class="text-danger">{{ $message }}</p>
-            @enderror
-
-            <div class="form-group">
-                <p class="mt-2">Vegetariano?</p>
-                <label for="vegetarian">Si</label>
-                <input type="radio" name="isVegetarian" value="1" id="vegetarian">
-                <label for="notVegetarian">No</label>
-                <input type="radio" name="isVegetarian" value="0" id="notVegetarian">
-            </div>
-
+            <p class="mt-2">Ingredienti:</p>
             @foreach ($ingredients as $ingredient)
                 <div class="form-check">
                     <input
@@ -70,6 +56,18 @@
                     </label>
                 </div>
             @endforeach
+            @error('ingredients')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
+
+            <div class="form-group">
+                <p class="mt-2">Vegetariano?</p>
+                <label for="vegetarian">Si</label>
+                <input type="radio" name="isVegetarian" value="1" id="vegetarian">
+                <label for="notVegetarian">No</label>
+                <input type="radio" name="isVegetarian" value="0" id="notVegetarian">
+            </div>
+
 
             <button type="submit" class="btn btn-primary mt-3">Crea!</button>
         </form>

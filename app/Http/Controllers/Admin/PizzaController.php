@@ -46,7 +46,7 @@ class PizzaController extends Controller
         $new_pizza = new Pizza;
         $new_pizza->fill($data);
         $new_pizza->save();
-
+        $new_pizza->ingredients()->sync($data["ingredients"]);
         return redirect()->route('admin.pizze.index', $new_pizza);
     }
 
@@ -88,7 +88,12 @@ class PizzaController extends Controller
         $pizza = Pizza::find($id);
 
         $pizza->update($data);
-
+        if(array_key_exists("ingredients", $data)){
+            $pizza->ingredients()->sync($data["ingredients"]);
+        }
+        else{
+            $pizza->ingredients()->detach();
+        }
         return redirect()->route('admin.pizze.show', $pizza);
     }
 
