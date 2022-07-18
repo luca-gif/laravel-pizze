@@ -1,16 +1,19 @@
 <template>
   <div class="container">
+    <HeaderComp/>
+    <router-view></router-view>
 
-    <PizzaComp/>
   </div>
 </template>
 
 <script>
 import Axios from 'axios';
 import PizzaComp from './components/PizzaComp.vue';
+import HeaderComp from './components/partials/HeaderComp.vue';
+
 
 export default {
-    components: { PizzaComp },
+    components: { PizzaComp, HeaderComp },
 
 
 }

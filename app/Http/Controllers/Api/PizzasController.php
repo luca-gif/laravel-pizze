@@ -13,4 +13,6 @@ class PizzasController extends Controller
 
         return response()->json($pizze);
     }
+
+
 }
