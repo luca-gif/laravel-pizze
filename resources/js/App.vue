@@ -6,13 +6,16 @@
 </template>
 
 <script>
+import Axios from 'axios';
 import PizzaComp from './components/PizzaComp.vue';
 
 export default {
-    components: { PizzaComp }
+    components: { PizzaComp },
+
+
 }
 </script>
 
-<style>
-
+<style lang="scss">
+     @import'~bootstrap/dist/css/bootstrap.css';
 </style>
